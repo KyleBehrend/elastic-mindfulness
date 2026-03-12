@@ -286,7 +286,7 @@ export default function IntroSection() {
         </motion.h1>
 
         <motion.p
-          className="mt-4 font-body text-sm text-muted md:text-base"
+          className="text-backdrop mt-4 font-body text-sm text-muted md:text-base"
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={reducedMotion ? { duration: 0.01 } : { duration: 1, delay: 0.8, ease: "easeOut" }}
@@ -297,7 +297,7 @@ export default function IntroSection() {
         {/* CTA — fades in after 2s */}
         {showCta && (
           <motion.p
-            className="mt-16 animate-breathe font-body text-xs tracking-widest text-muted"
+            className="text-backdrop mt-16 animate-breathe font-body text-xs tracking-widest text-muted"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={reducedMotion ? { duration: 0.01 } : { duration: 1, ease: "easeOut" }}

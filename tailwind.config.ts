@@ -13,7 +13,7 @@ const config: Config = {
         text: "#F5F0EB",
         accent: "#D4A574",
         "accent-glow": "#E8C9A0",
-        muted: "#666655",
+        muted: "#9E9A8F",
       },
       fontFamily: {
         display: ["var(--font-instrument-serif)", "serif"],

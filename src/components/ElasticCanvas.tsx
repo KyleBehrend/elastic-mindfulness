@@ -472,6 +472,10 @@ export default function ElasticCanvas() {
     };
   }, [showUI]);
 
+  // Onboarding hint
+  const [showHint, setShowHint] = useState(true);
+  const hasDrawnRef = useRef(false);
+
   // Clear confirmation
   const [showClearConfirm, setShowClearConfirm] = useState(false);
 
@@ -501,6 +505,10 @@ export default function ElasticCanvas() {
       const worldPos = converter.screenToWorld(sx, sy, canvasEl);
 
       if (first) {
+        if (!hasDrawnRef.current) {
+          hasDrawnRef.current = true;
+          setShowHint(false);
+        }
         speedTracker.current.reset();
         speedTracker.current.addPoint(sx, sy, performance.now());
 
@@ -619,6 +627,23 @@ export default function ElasticCanvas() {
 
       {/* DOM overlay */}
       <div className="pointer-events-none absolute inset-0">
+        {/* Onboarding hint */}
+        <AnimatePresence>
+          {showHint && (
+            <motion.div
+              className="text-backdrop absolute inset-0 flex items-center justify-center"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <p className="animate-breathe font-body text-sm tracking-widest text-muted">
+                drag to create elastic strands
+              </p>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
         <AnimatePresence>
           {uiVisible && (
             <motion.div

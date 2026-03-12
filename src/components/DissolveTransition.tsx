@@ -477,7 +477,7 @@ export default function DissolveTransition() {
       <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center px-6">
         {showText && (
           <motion.p
-            className="text-glow text-center font-display text-xl text-text md:text-2xl"
+            className="text-glow text-backdrop text-center font-display text-xl text-text md:text-2xl"
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={reducedMotion ? { duration: 0.3 } : { duration: 1.2, ease: "easeOut" }}
@@ -488,7 +488,7 @@ export default function DissolveTransition() {
 
         {showCta && (
           <motion.button
-            className="pointer-events-auto mt-8 animate-breathe font-body text-sm text-accent hover-lift focus:outline-none"
+            className="text-backdrop pointer-events-auto mt-8 animate-breathe font-body text-sm text-accent hover-lift focus:outline-none"
             onClick={handleContinue}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

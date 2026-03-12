@@ -20,7 +20,16 @@ body {
 
 /* ── Warm text-shadow for display headings ──────────────────────────── */
 .text-glow {
-  text-shadow: 0 0 40px rgba(212, 165, 116, 0.1);
+  text-shadow:
+    0 0 40px rgba(212, 165, 116, 0.15),
+    0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* ── Dark backdrop behind overlay text for readability ────────────── */
+.text-backdrop {
+  text-shadow:
+    0 1px 4px rgba(0, 0, 0, 0.9),
+    0 0 20px rgba(0, 0, 0, 0.6);
 }
 
 /* ── Interactive element hover: brightness lift ─────────────────────── */
