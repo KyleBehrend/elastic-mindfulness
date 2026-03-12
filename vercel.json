@@ -20,17 +20,5 @@
       ]
     }
   ],
-  "redirects": [
-    {
-      "source": "/:path(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.elasticmindfulness.com"
-        }
-      ],
-      "destination": "https://elasticmindfulness.com/:path",
-      "permanent": true
-    }
-  ]
+  "redirects": []
 }
