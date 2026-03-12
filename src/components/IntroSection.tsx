@@ -275,7 +275,7 @@ export default function IntroSection() {
       />
 
       {/* Text overlay */}
-      <div className="pointer-events-none relative z-10 flex flex-col items-center px-6 text-center">
+      <div className="pointer-events-none relative z-10 flex flex-col items-center px-6 text-center" style={{ marginTop: "-6vh" }}>
         <motion.h1
           className="text-glow font-display text-4xl tracking-wide text-text md:text-6xl"
           initial={{ opacity: 0, y: 12 }}
@@ -286,7 +286,7 @@ export default function IntroSection() {
         </motion.h1>
 
         <motion.p
-          className="text-backdrop mt-4 font-body text-sm text-muted md:text-base"
+          className="text-backdrop mt-14 font-body text-sm text-muted md:text-base"
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={reducedMotion ? { duration: 0.01 } : { duration: 1, delay: 0.8, ease: "easeOut" }}
