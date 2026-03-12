@@ -1,0 +1,36 @@
+{
+  "framework": "nextjs",
+  "headers": [
+    {
+      "source": "/(.*)\\.(js|css|woff2|svg|png|ico|webp)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/:path(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.elasticmindfulness.com"
+        }
+      ],
+      "destination": "https://elasticmindfulness.com/:path",
+      "permanent": true
+    }
+  ]
+}
