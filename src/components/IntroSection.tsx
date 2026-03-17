@@ -294,17 +294,15 @@ export default function IntroSection() {
           a 60-second experiment in slowness
         </motion.p>
 
-        {/* CTA — fades in after 2s */}
-        {showCta && (
-          <motion.p
-            className="text-backdrop mt-16 animate-breathe font-body text-xs tracking-widest text-muted"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={reducedMotion ? { duration: 0.01 } : { duration: 1, ease: "easeOut" }}
-          >
-            tap to begin
-          </motion.p>
-        )}
+        {/* CTA — always rendered to prevent layout shift, fades in after 2s */}
+        <motion.p
+          className="text-backdrop mt-16 animate-breathe font-body text-xs tracking-widest text-muted"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: showCta ? 1 : 0 }}
+          transition={reducedMotion ? { duration: 0.01 } : { duration: 1, ease: "easeOut" }}
+        >
+          tap to begin
+        </motion.p>
       </div>
     </motion.div>
   );
